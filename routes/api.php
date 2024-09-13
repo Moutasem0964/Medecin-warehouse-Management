@@ -32,6 +32,7 @@ Route::post('sort',[DrugsController::class,'sort']);
 
 
 Route::post('createNewOrder',[OrdersController::class,'createNewOrder'])->middleware('verifyApiToken');
+Route::get('listMyOreders',[OrdersController::class,'listMyOreders'])->middleware('verifyApiToken');
 Route::get('listAllOreders',[OrdersController::class,'listAllOreders'])->middleware('verifyApiToken');
 Route::post('editOreder',[OrdersController::class,'editOreder'])->middleware('verifyApiToken');
 

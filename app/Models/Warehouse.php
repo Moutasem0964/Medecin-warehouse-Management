@@ -21,4 +21,7 @@ class Warehouse extends Model
     {
         return $this->belongsToMany(Drug::class,'warehouse_drug')->withPivot('amount');
     }
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }

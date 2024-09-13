@@ -22,7 +22,10 @@ class Order extends Model
     }
 
     public function drugs()
-    {
-        return $this->belongsToMany(Drug::class);
+{
+    return $this->belongsToMany(Drug::class,'order_drug')->withPivot('amount');
+}
+    public function warehouse(){
+        return $this->belongsTo(Warehouse::class);
     }
 }
